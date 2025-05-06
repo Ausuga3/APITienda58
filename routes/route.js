@@ -1,8 +1,11 @@
 const exp = require('express')
-const modelProducto = require('../src/models/producto.model')
+const modeloProducto = require('../src/models/producto.model')
 const router = exp.Router()
-const controladorroductos = require('../src/controller/producto.controller')
+const controladorProductos = require('../src/controller/producto.controller')
 
-router.get('/productos', controladorroductos.consultar );
+
+
+router.get('/productos', controladorProductos.consultar );
+router.get('/agregarProductos,', controladorProductos.agregarProducto)
 
 module.exports = router

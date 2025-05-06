@@ -1,14 +1,18 @@
 const exp = require('express');
-require('dotenv').config();
 const modelProducto = require('./src/models/producto.model');
 const enrutamiento = require('./routes/route')
+require('dotenv').config();
 
 const app = exp();
+app.set('view engine', 'ejs')
 app.use(exp.urlencoded({extended:false}))
 app.use(exp.json());
 app.use('/v1', enrutamiento)
 
 
+app.get('/', function(req,res){
+    res.render('pages/index')
+})
 
 
 
